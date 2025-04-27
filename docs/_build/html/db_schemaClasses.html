@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Vehicle-DB 1.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=61243dd2"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="db_vehicleFilterOptions.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="db_dbInteractor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vehicle-DB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The entire codebase...</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="db_dbFileManager.html"><code class="docutils literal notranslate"><span class="pre">DatabaseFileManager</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_dbInteractor.html"><code class="docutils literal notranslate"><span class="pre">DatabaseInteractor</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Vehicle</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleFuelType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.DIESEL"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleFuelType.DIESEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.ELECTRONS"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleFuelType.ELECTRONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.PETROL"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleFuelType.PETROL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleType"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleType.CAR"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleType.CAR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleType.LORRY"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleType.LORRY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleType.PICKUPTRUCK"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleType.PICKUPTRUCK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.VehicleType.VAN"><code class="docutils literal notranslate"><span class="pre">Vehicle.VehicleType.VAN</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.__init__"><code class="docutils literal notranslate"><span class="pre">Vehicle.__init__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.deserialiseDatetime_"><code class="docutils literal notranslate"><span class="pre">Vehicle.deserialiseDatetime_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.fromSerialisedDict_"><code class="docutils literal notranslate"><span class="pre">Vehicle.fromSerialisedDict_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.fuelType"><code class="docutils literal notranslate"><span class="pre">Vehicle.fuelType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.getEmptyVehicle_"><code class="docutils literal notranslate"><span class="pre">Vehicle.getEmptyVehicle_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.getFormattedDate_"><code class="docutils literal notranslate"><span class="pre">Vehicle.getFormattedDate_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.getTableCreationSql_"><code class="docutils literal notranslate"><span class="pre">Vehicle.getTableCreationSql_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.isCurrentlyTaxed"><code class="docutils literal notranslate"><span class="pre">Vehicle.isCurrentlyTaxed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.lastServicedDate"><code class="docutils literal notranslate"><span class="pre">Vehicle.lastServicedDate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.makeAndModel"><code class="docutils literal notranslate"><span class="pre">Vehicle.makeAndModel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.manufacturedDate"><code class="docutils literal notranslate"><span class="pre">Vehicle.manufacturedDate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.regPlate"><code class="docutils literal notranslate"><span class="pre">Vehicle.regPlate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.serialiseDatetime_"><code class="docutils literal notranslate"><span class="pre">Vehicle.serialiseDatetime_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.serialiseToDict"><code class="docutils literal notranslate"><span class="pre">Vehicle.serialiseToDict()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.taxExpiryDate"><code class="docutils literal notranslate"><span class="pre">Vehicle.taxExpiryDate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.toDisplayTuple"><code class="docutils literal notranslate"><span class="pre">Vehicle.toDisplayTuple()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_schemaClasses.Vehicle.typeOfVehicle"><code class="docutils literal notranslate"><span class="pre">Vehicle.typeOfVehicle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db_vehicleFilterOptions.html"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataGrid.html"><code class="docutils literal notranslate"><span class="pre">DataGrid</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataSourceLabel.html"><code class="docutils literal notranslate"><span class="pre">DataSourceLabel</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dbRecordView.html"><code class="docutils literal notranslate"><span class="pre">DbRecordView</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_editVehicleDialog.html"><code class="docutils literal notranslate"><span class="pre">EditVehicleDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_filterVehiclesDialog.html"><code class="docutils literal notranslate"><span class="pre">FilterVehiclesDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_floatingToolTip.html"><code class="docutils literal notranslate"><span class="pre">FloatingToolTip</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_imageButton.html"><code class="docutils literal notranslate"><span class="pre">ImageButton</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_loadingDialog.html"><code class="docutils literal notranslate"><span class="pre">LoadingDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_mainWindow.html"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_textboxWithPlaceholder.html"><code class="docutils literal notranslate"><span class="pre">TextboxWithPlaceholder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_uiRenderer.html"><code class="docutils literal notranslate"><span class="pre">UiRenderer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_configProvider.html"><code class="docutils literal notranslate"><span class="pre">getGlobalConfig()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_constants.html"><code class="docutils literal notranslate"><span class="pre">DEBUG_DONT_CATCH_EXCEPTIONS</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html"><code class="docutils literal notranslate"><span class="pre">__handleFatalException_withMessageBox()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.overrideDefaultExceptionHandler"><code class="docutils literal notranslate"><span class="pre">overrideDefaultExceptionHandler()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showErrorMessage_andExit"><code class="docutils literal notranslate"><span class="pre">showErrorMessage_andExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showWarningMessage_butDontExit"><code class="docutils literal notranslate"><span class="pre">showWarningMessage_butDontExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.yieldTkinterRoot"><code class="docutils literal notranslate"><span class="pre">yieldTkinterRoot()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html"><code class="docutils literal notranslate"><span class="pre">drinkingCamelCase_toKebabCase()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html#logic.app_filesysUtils.resolvePath_relativeToMainPy"><code class="docutils literal notranslate"><span class="pre">resolvePath_relativeToMainPy()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="classDiagramOf_everything.html">ASCII class-diagram (of everything)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vehicle-DB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/db_schemaClasses.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <dl class="py class" id="module-logic.db_schemaClasses">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logic.db_schemaClasses.</span></span><span class="sig-name descname"><span class="pre">Vehicle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regPlate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typeOfVehicle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fuelType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">makeAndModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isCurrentlyTaxed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manufacturedDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxExpiryDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastServicedDate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>represents a vehicle, as stored in the database.
+This is the only file in the codebase to define the
+avaliable vehicle-attributes (regPlate, fuelType, etc.),
+EXCEPT FOR <cite>editVehicleDialog</cite>, <cite>vehicleFilterCriteria</cite>,
+and <cite>filterVehiclesDialog</cite>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleFuelType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VehicleFuelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>the enumeration of possible vehicle-fuel-types</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleFuelType.DIESEL">
+<span class="sig-name descname"><span class="pre">DIESEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.DIESEL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleFuelType.ELECTRONS">
+<span class="sig-name descname"><span class="pre">ELECTRONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.ELECTRONS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleFuelType.PETROL">
+<span class="sig-name descname"><span class="pre">PETROL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleFuelType.PETROL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VehicleType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>the enumeration of possible vehicle-types</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleType.CAR">
+<span class="sig-name descname"><span class="pre">CAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleType.CAR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleType.LORRY">
+<span class="sig-name descname"><span class="pre">LORRY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleType.LORRY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleType.PICKUPTRUCK">
+<span class="sig-name descname"><span class="pre">PICKUPTRUCK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleType.PICKUPTRUCK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.VehicleType.VAN">
+<span class="sig-name descname"><span class="pre">VAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.VehicleType.VAN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regPlate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typeOfVehicle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fuelType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">makeAndModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isCurrentlyTaxed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manufacturedDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxExpiryDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastServicedDate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.deserialiseDatetime_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialiseDatetime_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.deserialiseDatetime_" title="Link to this definition"></a></dt>
+<dd><p>returns either the timestamp-derived datetime, or None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.fromSerialisedDict_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromSerialisedDict_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.fromSerialisedDict_" title="Link to this definition"></a></dt>
+<dd><p>side-loading constructor: instanciates a Vehicle() from the db-derived dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle" title="logic.db_schemaClasses.Vehicle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vehicle</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.fuelType">
+<span class="sig-name descname"><span class="pre">fuelType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle.VehicleFuelType" title="logic.db_schemaClasses.Vehicle.VehicleFuelType"><code class="xref py py-class docutils literal notranslate"><span class="pre">VehicleFuelType</span></code></a></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.fuelType" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.getEmptyVehicle_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getEmptyVehicle_</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.getEmptyVehicle_" title="Link to this definition"></a></dt>
+<dd><p>returns an empty vehicle (for showing nothing in an editVehicleDialog)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle" title="logic.db_schemaClasses.Vehicle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vehicle</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.getFormattedDate_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getFormattedDate_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.getFormattedDate_" title="Link to this definition"></a></dt>
+<dd><p>returns in the format 30-02-2011</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.getTableCreationSql_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTableCreationSql_</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.getTableCreationSql_" title="Link to this definition"></a></dt>
+<dd><p>returns the SQL neesed to create a table for storing vehicle records.
+<strong>IMPORTANT</strong> → dates are stored using the SQL <cite>INTEGER</cite> type, as unix-epoch timestamps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.isCurrentlyTaxed">
+<span class="sig-name descname"><span class="pre">isCurrentlyTaxed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.isCurrentlyTaxed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.lastServicedDate">
+<span class="sig-name descname"><span class="pre">lastServicedDate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.lastServicedDate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.makeAndModel">
+<span class="sig-name descname"><span class="pre">makeAndModel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.makeAndModel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.manufacturedDate">
+<span class="sig-name descname"><span class="pre">manufacturedDate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.manufacturedDate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.regPlate">
+<span class="sig-name descname"><span class="pre">regPlate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.regPlate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.serialiseDatetime_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialiseDatetime_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.serialiseDatetime_" title="Link to this definition"></a></dt>
+<dd><p>returns either the timestamp() int, or None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.serialiseToDict">
+<span class="sig-name descname"><span class="pre">serialiseToDict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.serialiseToDict" title="Link to this definition"></a></dt>
+<dd><p>serialises each property appropriately (for db-storage)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">any</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.taxExpiryDate">
+<span class="sig-name descname"><span class="pre">taxExpiryDate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.taxExpiryDate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.toDisplayTuple">
+<span class="sig-name descname"><span class="pre">toDisplayTuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.toDisplayTuple" title="Link to this definition"></a></dt>
+<dd><p>returns an in-order tuple of all vehicle properties, suitable for DataGrid insertion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_schemaClasses.Vehicle.typeOfVehicle">
+<span class="sig-name descname"><span class="pre">typeOfVehicle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle.VehicleType" title="logic.db_schemaClasses.Vehicle.VehicleType"><code class="xref py py-class docutils literal notranslate"><span class="pre">VehicleType</span></code></a></em><a class="headerlink" href="#logic.db_schemaClasses.Vehicle.typeOfVehicle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db_dbInteractor.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="db_vehicleFilterOptions.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ben Mullan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

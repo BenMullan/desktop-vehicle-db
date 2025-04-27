@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Vehicle-DB 1.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=61243dd2"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="ui_c_dataGrid.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="db_schemaClasses.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vehicle-DB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The entire codebase...</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="db_dbFileManager.html"><code class="docutils literal notranslate"><span class="pre">DatabaseFileManager</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_dbInteractor.html"><code class="docutils literal notranslate"><span class="pre">DatabaseInteractor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_schemaClasses.html"><code class="docutils literal notranslate"><span class="pre">Vehicle</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__dateIsInRange_"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.__dateIsInRange_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__init__"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.__init__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__makeDateRanges_inAscendingOrder"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.__makeDateRanges_inAscendingOrder()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.getEmpty_"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.getEmpty_()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.isSatisfiedBy"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.isSatisfiedBy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.lastServicedDate_between"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.lastServicedDate_between</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.manufacturedDate_between"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.manufacturedDate_between</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.must_be_currentlyTaxed"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.must_be_currentlyTaxed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.numberOfNonNullFilterOptions"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.numberOfNonNullFilterOptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_makesAndModels_containing"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.only_makesAndModels_containing</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_regPlates_containing"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.only_regPlates_containing</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_fuelTypes"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.only_these_fuelTypes</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_vehicleTypes"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.only_these_vehicleTypes</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.pluckMatchingVehicles"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.pluckMatchingVehicles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.taxExpiryDate_between"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions.taxExpiryDate_between</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataGrid.html"><code class="docutils literal notranslate"><span class="pre">DataGrid</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataSourceLabel.html"><code class="docutils literal notranslate"><span class="pre">DataSourceLabel</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dbRecordView.html"><code class="docutils literal notranslate"><span class="pre">DbRecordView</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_editVehicleDialog.html"><code class="docutils literal notranslate"><span class="pre">EditVehicleDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_filterVehiclesDialog.html"><code class="docutils literal notranslate"><span class="pre">FilterVehiclesDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_floatingToolTip.html"><code class="docutils literal notranslate"><span class="pre">FloatingToolTip</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_imageButton.html"><code class="docutils literal notranslate"><span class="pre">ImageButton</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_loadingDialog.html"><code class="docutils literal notranslate"><span class="pre">LoadingDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_mainWindow.html"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_textboxWithPlaceholder.html"><code class="docutils literal notranslate"><span class="pre">TextboxWithPlaceholder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_uiRenderer.html"><code class="docutils literal notranslate"><span class="pre">UiRenderer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_configProvider.html"><code class="docutils literal notranslate"><span class="pre">getGlobalConfig()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_constants.html"><code class="docutils literal notranslate"><span class="pre">DEBUG_DONT_CATCH_EXCEPTIONS</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html"><code class="docutils literal notranslate"><span class="pre">__handleFatalException_withMessageBox()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.overrideDefaultExceptionHandler"><code class="docutils literal notranslate"><span class="pre">overrideDefaultExceptionHandler()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showErrorMessage_andExit"><code class="docutils literal notranslate"><span class="pre">showErrorMessage_andExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showWarningMessage_butDontExit"><code class="docutils literal notranslate"><span class="pre">showWarningMessage_butDontExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.yieldTkinterRoot"><code class="docutils literal notranslate"><span class="pre">yieldTkinterRoot()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html"><code class="docutils literal notranslate"><span class="pre">drinkingCamelCase_toKebabCase()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html#logic.app_filesysUtils.resolvePath_relativeToMainPy"><code class="docutils literal notranslate"><span class="pre">resolvePath_relativeToMainPy()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="classDiagramOf_everything.html">ASCII class-diagram (of everything)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vehicle-DB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/db_vehicleFilterOptions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <dl class="py class" id="module-logic.db_vehicleFilterOptions">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logic.db_vehicleFilterOptions.</span></span><span class="sig-name descname"><span class="pre">VehicleFilterOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">only_regPlates_containing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_these_vehicleTypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_these_fuelTypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_makesAndModels_containing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">must_be_currentlyTaxed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manufacturedDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxExpiryDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastServicedDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>represents a set of criteria for determining if a given
+Vehicle() instance should be included in a filtered search</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.__dateIsInRange_">
+<span class="sig-name descname"><span class="pre">__dateIsInRange_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_range</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__dateIsInRange_" title="Link to this definition"></a></dt>
+<dd><p>returns True if the given date is within the given range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">only_regPlates_containing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_these_vehicleTypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_these_fuelTypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_makesAndModels_containing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">must_be_currentlyTaxed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manufacturedDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxExpiryDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastServicedDate_between</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.__makeDateRanges_inAscendingOrder">
+<span class="sig-name descname"><span class="pre">__makeDateRanges_inAscendingOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.__makeDateRanges_inAscendingOrder" title="Link to this definition"></a></dt>
+<dd><p>sets all date-ranges to be in ascending order</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.getEmpty_">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getEmpty_</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.getEmpty_" title="Link to this definition"></a></dt>
+<dd><p>returns a VehicleFilterOptions() with all filter-options set to <cite>None</cite>
+(ie. all vehicles will pass through it; none will be filtered-out)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="index.html#logic.db_vehicleFilterOptions.VehicleFilterOptions" title="logic.db_vehicleFilterOptions.VehicleFilterOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">VehicleFilterOptions</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.isSatisfiedBy">
+<span class="sig-name descname"><span class="pre">isSatisfiedBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_examinee</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.isSatisfiedBy" title="Link to this definition"></a></dt>
+<dd><p>returns True if the given Vehicle satisfies all set filter-options</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.lastServicedDate_between">
+<span class="sig-name descname"><span class="pre">lastServicedDate_between</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">]</span> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.lastServicedDate_between" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.manufacturedDate_between">
+<span class="sig-name descname"><span class="pre">manufacturedDate_between</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">]</span> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.manufacturedDate_between" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.must_be_currentlyTaxed">
+<span class="sig-name descname"><span class="pre">must_be_currentlyTaxed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.must_be_currentlyTaxed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.numberOfNonNullFilterOptions">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberOfNonNullFilterOptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.numberOfNonNullFilterOptions" title="Link to this definition"></a></dt>
+<dd><p>returns the number of defined (not-None) filter-options</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.only_makesAndModels_containing">
+<span class="sig-name descname"><span class="pre">only_makesAndModels_containing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_makesAndModels_containing" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.only_regPlates_containing">
+<span class="sig-name descname"><span class="pre">only_regPlates_containing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_regPlates_containing" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_fuelTypes">
+<span class="sig-name descname"><span class="pre">only_these_fuelTypes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code><span class="pre">[</span><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle.VehicleFuelType" title="logic.db_schemaClasses.Vehicle.VehicleFuelType"><code class="xref py py-class docutils literal notranslate"><span class="pre">VehicleFuelType</span></code></a><span class="pre">]</span> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_fuelTypes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_vehicleTypes">
+<span class="sig-name descname"><span class="pre">only_these_vehicleTypes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code><span class="pre">[</span><a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle.VehicleType" title="logic.db_schemaClasses.Vehicle.VehicleType"><code class="xref py py-class docutils literal notranslate"><span class="pre">VehicleType</span></code></a><span class="pre">]</span> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.only_these_vehicleTypes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.pluckMatchingVehicles">
+<span class="sig-name descname"><span class="pre">pluckMatchingVehicles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_examinees</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.pluckMatchingVehicles" title="Link to this definition"></a></dt>
+<dd><p>returns the Vehicles which satisfy all conditions of the current VehicleFilterOptions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<a class="reference internal" href="index.html#logic.db_schemaClasses.Vehicle" title="logic.db_schemaClasses.Vehicle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vehicle</span></code></a>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.db_vehicleFilterOptions.VehicleFilterOptions.taxExpiryDate_between">
+<span class="sig-name descname"><span class="pre">taxExpiryDate_between</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code><span class="pre">]</span> <span class="pre">|</span> <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#logic.db_vehicleFilterOptions.VehicleFilterOptions.taxExpiryDate_between" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db_schemaClasses.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui_c_dataGrid.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ben Mullan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

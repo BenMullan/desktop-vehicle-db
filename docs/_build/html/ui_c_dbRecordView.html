@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Vehicle-DB 1.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=61243dd2"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="ui_c_editVehicleDialog.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="ui_c_dataSourceLabel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vehicle-DB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The entire codebase...</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="db_dbFileManager.html"><code class="docutils literal notranslate"><span class="pre">DatabaseFileManager</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_dbInteractor.html"><code class="docutils literal notranslate"><span class="pre">DatabaseInteractor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_schemaClasses.html"><code class="docutils literal notranslate"><span class="pre">Vehicle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_vehicleFilterOptions.html"><code class="docutils literal notranslate"><span class="pre">VehicleFilterOptions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataGrid.html"><code class="docutils literal notranslate"><span class="pre">DataGrid</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_dataSourceLabel.html"><code class="docutils literal notranslate"><span class="pre">DataSourceLabel</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">DbRecordView</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__addChildWidgets"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__addChildWidgets()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__configureContextMenu"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__configureContextMenu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__configureSelf"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__configureSelf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__contextMenu"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__contextMenu</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__currentFilterOptions"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__currentFilterOptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__dataGrid"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__dataGrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__dataSourceLabel"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__dataSourceLabel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__dbInteractor"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__dbInteractor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__deleteIcon16"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__deleteIcon16</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__deleteVehicleCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__deleteVehicleCallback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__deteleSelectedVehicle"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__deteleSelectedVehicle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__editIcon16"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__editIcon16</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__editSelectedVehicle"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__editSelectedVehicle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__editVehicleCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__editVehicleCallback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__filterDescriptionLabel_text"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__filterDescriptionLabel_text</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__filterShownVehicles"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__filterShownVehicles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__filterVehiclesCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__filterVehiclesCallback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__getSelectedRow_regPlate"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__getSelectedRow_regPlate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__init__"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__init__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.__showContextMenu"><code class="docutils literal notranslate"><span class="pre">DbRecordView.__showContextMenu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.currentFilterOptions"><code class="docutils literal notranslate"><span class="pre">DbRecordView.currentFilterOptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.loadVehicleColumns_fromDatabase"><code class="docutils literal notranslate"><span class="pre">DbRecordView.loadVehicleColumns_fromDatabase()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.loadVehicleRecords_matchingFilter"><code class="docutils literal notranslate"><span class="pre">DbRecordView.loadVehicleRecords_matchingFilter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.setDataSourceLabelPointer"><code class="docutils literal notranslate"><span class="pre">DbRecordView.setDataSourceLabelPointer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.setDeleteVehicleCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.setDeleteVehicleCallback()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.setEditVehicleCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.setEditVehicleCallback()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic.ui_c_dbRecordView.DbRecordView.setFilterVehiclesCallback"><code class="docutils literal notranslate"><span class="pre">DbRecordView.setFilterVehiclesCallback()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_editVehicleDialog.html"><code class="docutils literal notranslate"><span class="pre">EditVehicleDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_filterVehiclesDialog.html"><code class="docutils literal notranslate"><span class="pre">FilterVehiclesDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_floatingToolTip.html"><code class="docutils literal notranslate"><span class="pre">FloatingToolTip</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_imageButton.html"><code class="docutils literal notranslate"><span class="pre">ImageButton</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_loadingDialog.html"><code class="docutils literal notranslate"><span class="pre">LoadingDialog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_mainWindow.html"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_c_textboxWithPlaceholder.html"><code class="docutils literal notranslate"><span class="pre">TextboxWithPlaceholder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_uiRenderer.html"><code class="docutils literal notranslate"><span class="pre">UiRenderer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_configProvider.html"><code class="docutils literal notranslate"><span class="pre">getGlobalConfig()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_constants.html"><code class="docutils literal notranslate"><span class="pre">DEBUG_DONT_CATCH_EXCEPTIONS</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html"><code class="docutils literal notranslate"><span class="pre">__handleFatalException_withMessageBox()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.overrideDefaultExceptionHandler"><code class="docutils literal notranslate"><span class="pre">overrideDefaultExceptionHandler()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showErrorMessage_andExit"><code class="docutils literal notranslate"><span class="pre">showErrorMessage_andExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.showWarningMessage_butDontExit"><code class="docutils literal notranslate"><span class="pre">showWarningMessage_butDontExit()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_errorHandling.html#logic.app_errorHandling.yieldTkinterRoot"><code class="docutils literal notranslate"><span class="pre">yieldTkinterRoot()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html"><code class="docutils literal notranslate"><span class="pre">drinkingCamelCase_toKebabCase()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_filesysUtils.html#logic.app_filesysUtils.resolvePath_relativeToMainPy"><code class="docutils literal notranslate"><span class="pre">resolvePath_relativeToMainPy()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="classDiagramOf_everything.html">ASCII class-diagram (of everything)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vehicle-DB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ui_c_dbRecordView.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <dl class="py class" id="module-logic.ui_c_dbRecordView">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logic.ui_c_dbRecordView.</span></span><span class="sig-name descname"><span class="pre">DbRecordView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_parentComponent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_dbInteractor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<p>ui-component: CRUD row-by-row editor (principally a table)</p>
+<p><em>which</em> database file this component reads from,
+is goverened by the <cite>targetDatabase</cite> property of
+the DatabaseInteractor singleton.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__addChildWidgets">
+<span class="sig-name descname"><span class="pre">__addChildWidgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__addChildWidgets" title="Link to this definition"></a></dt>
+<dd><p>adds the child-widgets to the Frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__configureContextMenu">
+<span class="sig-name descname"><span class="pre">__configureContextMenu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__configureContextMenu" title="Link to this definition"></a></dt>
+<dd><p>binds the right-click/[Enter] menu to each row</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__configureSelf">
+<span class="sig-name descname"><span class="pre">__configureSelf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__configureSelf" title="Link to this definition"></a></dt>
+<dd><p>initialises the ui-component’s properties and children</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__contextMenu">
+<span class="sig-name descname"><span class="pre">__contextMenu</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tkinter.Menu</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__contextMenu" title="Link to this definition"></a></dt>
+<dd><p>the right-click menu for rows</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__currentFilterOptions">
+<span class="sig-name descname"><span class="pre">__currentFilterOptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">db_vehicleFilterOptions.VehicleFilterOptions</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__currentFilterOptions" title="Link to this definition"></a></dt>
+<dd><p>the current filter options for displaying vehicle records</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__dataGrid">
+<span class="sig-name descname"><span class="pre">__dataGrid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ui_c_dataGrid.DataGrid</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__dataGrid" title="Link to this definition"></a></dt>
+<dd><p>the tabular grid of data-cells showing database records</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__dataSourceLabel">
+<span class="sig-name descname"><span class="pre">__dataSourceLabel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ui_c_dataSourceLabel.DataSourceLabel</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__dataSourceLabel" title="Link to this definition"></a></dt>
+<dd><p>[pointer-to] the label saying [showing * vehicles from {database-file}]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__dbInteractor">
+<span class="sig-name descname"><span class="pre">__dbInteractor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">db_dbInteractor.DatabaseInteractor</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__dbInteractor" title="Link to this definition"></a></dt>
+<dd><p>the DatabaseInteractor whence to read/write to the database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__deleteIcon16">
+<span class="sig-name descname"><span class="pre">__deleteIcon16</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tkinter.PhotoImage</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__deleteIcon16" title="Link to this definition"></a></dt>
+<dd><p>[x] delete icon for context-menu</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__deleteVehicleCallback">
+<span class="sig-name descname"><span class="pre">__deleteVehicleCallback</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">callable[str]</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__deleteVehicleCallback" title="Link to this definition"></a></dt>
+<dd><p>a function taking in a regPlate, to DELETE a vehicle</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__deteleSelectedVehicle">
+<span class="sig-name descname"><span class="pre">__deteleSelectedVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__deteleSelectedVehicle" title="Link to this definition"></a></dt>
+<dd><p>invokes __deleteVehicleCallback() with the selected vehicle’s regPlate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__editIcon16">
+<span class="sig-name descname"><span class="pre">__editIcon16</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tkinter.PhotoImage</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__editIcon16" title="Link to this definition"></a></dt>
+<dd><p>[/] edit icon for context-menu</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__editSelectedVehicle">
+<span class="sig-name descname"><span class="pre">__editSelectedVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__editSelectedVehicle" title="Link to this definition"></a></dt>
+<dd><p>invokes __editVehicleCallback() with the selected vehicle’s regPlate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__editVehicleCallback">
+<span class="sig-name descname"><span class="pre">__editVehicleCallback</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">callable[str]</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__editVehicleCallback" title="Link to this definition"></a></dt>
+<dd><p>a function taking in a regPlate, to UPDATE a vehicle</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__filterDescriptionLabel_text">
+<span class="sig-name descname"><span class="pre">__filterDescriptionLabel_text</span></span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__filterDescriptionLabel_text" title="Link to this definition"></a></dt>
+<dd><p>shows the current filter-options in blue</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">StringVar</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__filterShownVehicles">
+<span class="sig-name descname"><span class="pre">__filterShownVehicles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__filterShownVehicles" title="Link to this definition"></a></dt>
+<dd><p>invokes the __filterVehiclesCallback</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__filterVehiclesCallback">
+<span class="sig-name descname"><span class="pre">__filterVehiclesCallback</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">callable</span></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__filterVehiclesCallback" title="Link to this definition"></a></dt>
+<dd><p>a ui-wireup function to get and apply filter-options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__getSelectedRow_regPlate">
+<span class="sig-name descname"><span class="pre">__getSelectedRow_regPlate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__getSelectedRow_regPlate" title="Link to this definition"></a></dt>
+<dd><p>returns the regPlate of the selected row</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_parentComponent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_dbInteractor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__init__" title="Link to this definition"></a></dt>
+<dd><p>instanciates the ui-component</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.__showContextMenu">
+<span class="sig-name descname"><span class="pre">__showContextMenu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.__showContextMenu" title="Link to this definition"></a></dt>
+<dd><p>shows the right-click menu, for the currently-selected row</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.currentFilterOptions">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentFilterOptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="index.html#logic.db_vehicleFilterOptions.VehicleFilterOptions" title="logic.db_vehicleFilterOptions.VehicleFilterOptions"><span class="pre">VehicleFilterOptions</span></a></em><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.currentFilterOptions" title="Link to this definition"></a></dt>
+<dd><p>returns the current filter-options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.loadVehicleColumns_fromDatabase">
+<span class="sig-name descname"><span class="pre">loadVehicleColumns_fromDatabase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.loadVehicleColumns_fromDatabase" title="Link to this definition"></a></dt>
+<dd><p>queries the database for the vehicle-table’s columns, &amp; creates
+a DataGrid column for each property in the getVehicleTableColumns() result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.loadVehicleRecords_matchingFilter">
+<span class="sig-name descname"><span class="pre">loadVehicleRecords_matchingFilter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.loadVehicleRecords_matchingFilter" title="Link to this definition"></a></dt>
+<dd><p>populates the table with vehicle records satisfying
+the <cite>currentFilterOptions</cite>, and updates the __dataSourceLabel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.setDataSourceLabelPointer">
+<span class="sig-name descname"><span class="pre">setDataSourceLabelPointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_dataSourceLabel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.setDataSourceLabelPointer" title="Link to this definition"></a></dt>
+<dd><p>sets the __dataSourceLabel pointer to the given DataSourceLabel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.setDeleteVehicleCallback">
+<span class="sig-name descname"><span class="pre">setDeleteVehicleCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.setDeleteVehicleCallback" title="Link to this definition"></a></dt>
+<dd><p>sets __deleteVehicleCallback to a function taking in a regPlate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.setEditVehicleCallback">
+<span class="sig-name descname"><span class="pre">setEditVehicleCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.setEditVehicleCallback" title="Link to this definition"></a></dt>
+<dd><p>sets __editVehicleCallback to a function taking in a regPlate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logic.ui_c_dbRecordView.DbRecordView.setFilterVehiclesCallback">
+<span class="sig-name descname"><span class="pre">setFilterVehiclesCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logic.ui_c_dbRecordView.DbRecordView.setFilterVehiclesCallback" title="Link to this definition"></a></dt>
+<dd><p>sets __filterVehiclesCallback to a function taking no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ui_c_dataSourceLabel.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui_c_editVehicleDialog.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ben Mullan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# file:     .flake8 - config file for flake8 code-style-castigation tool
+# author:   Ben Mullan (2025)
+
+[flake8]
+
+max-line-length = 180
+
+exclude = __pycache__, data, docs
+
+ignore = 
+    E121, E124, E128, E131, E201, E202, E203, E221, E222, 
+    E227, E231, E251, E261, E262, E265, E272, E275, W292, 
+    E301, E302, E303, E401, W504, W503, E701, E702, E703
